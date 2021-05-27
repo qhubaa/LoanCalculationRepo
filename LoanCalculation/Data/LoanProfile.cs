@@ -12,7 +12,7 @@ namespace LoanCalculation.Data
     {
         public LoanProfile()
         {
-            CreateMap<LoanConfiguration, LoanConfigurationModel>();
+            //CreateMap<LoanConfiguration, LoanConfigurationModel>();
             CreateMap<LoanPaymentOverview, LoanPaymentOverviewModel>();
             CreateMap<LoanConfigurationModel, LoanConfiguration>();
         }

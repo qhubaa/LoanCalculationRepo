@@ -32,9 +32,9 @@ namespace LoanCalculation.Controllers
 
                 return _mapper.Map<LoanPaymentOverviewModel>(result);
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Database error");
+                return StatusCode(StatusCodes.Status500InternalServerError, exception.Message);
             }
         }
     }

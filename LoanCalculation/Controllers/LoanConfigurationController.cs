@@ -38,9 +38,9 @@ namespace LoanCalculation.Controllers
 
                 return _mapper.Map<LoanConfigurationModel>(result);
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Database error");
+                return StatusCode(StatusCodes.Status500InternalServerError, exception.Message);
             }
         }
 
@@ -60,10 +60,9 @@ namespace LoanCalculation.Controllers
                     return _mapper.Map<LoanConfigurationModel>(oldLoanConfiguration);
                 }
             }
-            catch (Exception e)
+            catch (Exception exception)
             {
-                var test = e.Message;
-                return StatusCode(StatusCodes.Status500InternalServerError, "Database error");
+                return StatusCode(StatusCodes.Status500InternalServerError, exception.Message);
             }
 
             return BadRequest();
